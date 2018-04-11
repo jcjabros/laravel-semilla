@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use App\User;
 use App\Role;
+use\App\Subscriber;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -85,6 +86,11 @@ class RegisterController extends Controller
             $user
             ->roles()
             ->attach(Role::where('name','user')->first());
+            if (array_get($data, 'subscribe', false)){
+                $subscriber        = new Subscriber;
+                $subscriber->email = $data['email'];
+                $subscriber->save();
+            }
           }
          return $user;
     }

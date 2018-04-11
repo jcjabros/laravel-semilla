@@ -80,6 +80,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                         
+                        <div class="form-group row  ml-5 pl-5">
+                            <div class="col-md-12 float-right">
+                                    <div class="custom-control custom-checkbox">
+                                            <input id="subscribe" type="checkbox" class="custom-control-input " name="subscribe">
+                                            <label  class="custom-control-label" for="subscribe" >Yes !, I want to receive offers and discount coupons.</label>
+                                    </div>
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
