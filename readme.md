@@ -8,7 +8,7 @@
 
 3. Copy .env.example file to .env on the root folder.
 
-4.1 Creante a DB on phpMyAdmin.
+4.1 Create a DB on phpMyAdmin.
 
 4.2 Open your .env file and change the database name (`DB_DATABASE`) to whatever you have, username (`DB_USERNAME`) and password (`DB_PASSWORD`) field correspond to your configuration. By default, the username is root and you can leave the password field empty. (This is for Xampp) 
 
