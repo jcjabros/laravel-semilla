@@ -36,13 +36,19 @@
                                 <th>No</th>
                                 <th>Name</th>
                                 <th>Role</th>
+                                <th></th>
                             </tr>
                             @foreach($users as $user)
                                 <tr>
                                     <td>{{$countUsers++}}</td>
                                     <td>{{$user->name}}</td>
-                                    <td>{{$user->roles()->first()->description}}</td>  
-                                          
+                                    <td>{{$user->roles()->first()->description}}</td>
+                                    <td>
+                                            {!!Form::open(['action' => ['DestroyController@delete', $user->id],'method' => 'POST', 'class' => 'pull-right form-delete','onsubmit' => 'return ConfirmDelete()'])!!}
+                                                {{Form::hidden('_method', 'DELETE')}}
+                                                {{Form::submit('Delete', ['class' => 'btn btn-danger float-right'])}}
+                                            {!!Form::close()!!}
+                                        </td>
                                 </tr>
                             @endforeach
                             

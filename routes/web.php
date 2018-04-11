@@ -31,4 +31,5 @@ Route::get('/changePassword','DashboardController@showChangePasswordForm');
 Route::post('/changePassword','DashboardController@changePassword')->name('changePassword');
 Route::post('/subscribe','SubscribersController@postSubscribeAjax');
 Route::delete('/subscribe/{subscriber}','SubscribersController@delete');
+Route::delete('/register/{register}','DestroyController@delete');
 Auth::routes();
