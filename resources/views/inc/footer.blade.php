@@ -1,16 +1,16 @@
-<footer class="container" id="footer">
+<footer class="footer pl-5 pr-5" id="footer">
+  <hr>
         <div class="row">
-          <div class="col-6 col-md">
+          <div class="col-4">
             {!! Form::open(array('url' => '/subscribe', 'class' => 'subscribe-form', 'role' =>'form')) !!}
         
             <div class="form-group">
               <label class="sr-only" for="mce-EMAIL">Email address</label>
               <input type="email" name="subscribe_email" class="form-control" id="mce-EMAIL" placeholder="Enter email" required>
-            
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;"><input type="text" name="b_168a366a98d3248fbc35c0b67_73d49e0d23" value=""></div>
             </div>
-            <div class="form-group col-6 float-right"><input type="submit" value="Subscribe" name="subscribe" id="subscribe" class="btn btn-dark"></div>
+            <div class="form-group"><input type="submit" value="Subscribe" name="subscribe" id="subscribe" class="btn btn-dark float-right"></div>
             {!! Form::close() !!}
             <br>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>

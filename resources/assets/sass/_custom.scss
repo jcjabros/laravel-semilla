@@ -1,10 +1,18 @@
+/* ***********NOTE: To compile the SCSS styles Run: npm run dev. ***********************
+-------------------------------------------------- */
+
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
-
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
     color: #5a5a5a;
+    /* Margin bottom by footer height */
+    margin-bottom: 200px;
   }
   
   
@@ -65,8 +73,16 @@ body {
     line-height: 1;
     letter-spacing: -.05rem;
   }
-  
-  
+  /* FOOTER TO BOTTOM
+  -------------------------------------------------- */
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 200px;
+   // line-height: 300px; /* Vertically center the text there */
+  }
   /* RESPONSIVE CSS
   -------------------------------------------------- */
   
@@ -88,3 +104,4 @@ body {
       margin-top: 7rem;
     }
   }
+
