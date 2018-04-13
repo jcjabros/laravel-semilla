@@ -23,6 +23,7 @@ Route::get('/dashboard/categories', 'DashboardController@categories')->name('Cat
 Route::get('/dashboard/products', 'DashboardController@products')->name('Products');
 Route::get('/dashboard/posts', 'DashboardController@posts')->name('Posts');
 Route::get('/dashboard/users', 'DashboardController@users')->name('Users');
+Route::get('/dashboard/sliders', 'DashboardController@slider')->name('Sliders');
 Route::get('/dashboard/subscribers', 'DashboardController@subscribers')->name('Subscribers');
 Route::resource('posts','PostsController');
 Route::resource('catalog', 'PCategoriesController');
@@ -30,6 +31,8 @@ Route::resource('product', 'ProductController');
 Route::get('/changePassword','DashboardController@showChangePasswordForm');
 Route::post('/changePassword','DashboardController@changePassword')->name('changePassword');
 Route::post('/subscribe','SubscribersController@postSubscribeAjax');
-Route::delete('/subscribe/{subscriber}','SubscribersController@delete');
-Route::delete('/register/{register}','DestroyController@delete');
+Route::delete('/subscribe/{subscriber_id}','SubscribersController@delete');
+Route::delete('/register/{register_id}','DestroyController@delete');
+Route::post('/homeSlider/create', 'HomeSliderController@store');
+Route::post('/homeSlider/{slider_id}', 'HomeSliderController@update');
 Auth::routes();

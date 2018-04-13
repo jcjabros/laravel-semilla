@@ -10,6 +10,7 @@ use App\PCategory;
 use App\Product;
 use App\Post;
 use App\Subscriber;
+use App\HomeSlider;
 class DashboardController extends Controller
 {
     /**
@@ -101,5 +102,10 @@ class DashboardController extends Controller
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
         return redirect('dashboard')->with("success","Password changed successfully !");
+    }
+
+    public function slider(){
+        $homeSlider = HomeSlider::get()->first();
+        return view('dashboard.sliders')->with('homeSlider',$homeSlider);
     }
 }

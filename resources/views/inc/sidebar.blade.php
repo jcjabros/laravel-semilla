@@ -40,6 +40,12 @@
                   Categories
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/sliders') ? 'active' : '' }}"  href="/dashboard/sliders">
+                  <span data-feather="image"></span>
+                  Home Slider
+                </a>
+              </li>
               @if(Auth::user()->hasRole('administrator') !=null) 
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('register') ? 'active' : '' }}"  href="/register">
