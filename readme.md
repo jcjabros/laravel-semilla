@@ -14,6 +14,6 @@
 
 5. Run `php artisan key:generate.`
 
-6. Run `php artisan migrate.`
+6. Run `php artisan migrate:fresh --seed`
 
 7. Run `php artisan serve.`
