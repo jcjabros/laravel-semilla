@@ -40,6 +40,7 @@
                             </span>
                         @endif
                     </div>
+                    <small class="w-100 p-3">Note: If the category chosen above has products, those products will no longer be displayed.</small>
                 </div>      
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}

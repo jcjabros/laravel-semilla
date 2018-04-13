@@ -90,7 +90,7 @@ class PCategoriesController extends Controller
         $pCategory->description = $request->input('description');
         $pCategory->cover_image = $fileNameToStore;
         if($request->input('parent')!='None'){
-            $parent = PCategory::find($request->input('parent'));
+            $parent = PCategory::where('name',$request->input('parent'))->first();
             $pCategory->parent_id = $parent->id;
         }
         else{
@@ -109,7 +109,7 @@ class PCategoriesController extends Controller
     {
         auth()->user()->authorizeRoles(['administrator', 'manager']);
         $pCategory=PCategory::find($id);
-     return view('pcategories.edit')->with('pCategory',$pCategory);
+     return view('pcategories.edit')->with('pCategory',$pCategory)->with('categories',PCategory::all());
     }
 
     /**
@@ -124,7 +124,7 @@ class PCategoriesController extends Controller
         auth()->user()->authorizeRoles(['administrator', 'manager']);
         $this->validate($request, [
             'name' => 'required',
-            'size' => 'required',
+            'sizes' => 'required',
             'description' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);
@@ -151,6 +151,13 @@ class PCategoriesController extends Controller
         if($request->hasFile('cover_image')){
             Storage::delete('public/cover_images/' . $pCategory->cover_image);
             $pCategory->cover_image = $fileNameToStore;
+        }
+        if($request->input('parent') != 'None'){
+            $parent = PCategory::where('name',$request->input('parent'))->first();
+            $pCategory->parent_id = $parent->id;
+        }
+        else{
+        $pCategory->parent_id = '0';
         }
         $pCategory->save();
         return redirect('/dashboard/categories')->with('success', 'Category Updated');
