@@ -2,7 +2,7 @@
 
  @section('content')
   <br>
-    <h1 class="text-center"> {{$category_name}}</h1>
+    <h1 class="text-center"> {{$name}}</h1>
       @if(count($products) > 0)
         <div class="row">
                 @foreach($products as $product)

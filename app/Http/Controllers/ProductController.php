@@ -226,7 +226,7 @@ class ProductController extends Controller
         }
         $product->price=$request->input('price');
         $product->save();
-        return redirect('/product')->with('success', 'Product Updated');
+        return redirect('dashboard/products')->with('success', 'Product Updated');
     }
 
     /**

@@ -2,7 +2,7 @@
 
  @section('content')
  <br>
- <h1 class="text-center">CATALOG</h1>
+ <h1 class="text-center">{{$name}}</h1>
  @if(count($categories) > 0)
  <?php $countPost = 0;?>
 
@@ -20,8 +20,6 @@
  </div>
 
 </div> 
-   {{$categories->links()}}
-
   @else
   <p>Ups! we have no posts.</p>
   @endif

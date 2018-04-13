@@ -10,8 +10,8 @@
             {{Form::text('name', $pCategory->name, ['class' => 'form-control', 'placeholder' => 'Name'])}}
         </div>
         <div class="form-group col-sm-4">
-                {{Form::label('size', 'Sizes')}}
-                {{Form::text('size', $pCategory->sizes, ['class' => 'form-control', 'placeholder' => 'Sizes'])}}
+                {{Form::label('sizes', 'Sizes')}}
+                {{Form::text('sizes', $pCategory->sizes, ['class' => 'form-control', 'placeholder' => 'Sizes'])}}
             </div>
         <div class="form-group">
             {{Form::label('description', 'Description')}}

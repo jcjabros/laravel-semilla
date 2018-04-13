@@ -20,9 +20,27 @@ class PCategoriesController extends Controller
 
     public function index()
     {
-        $categories = PCategory::orderby('created_at','desc')->paginate(10);
-        return view('pcategories.index')->with('categories',$categories);
+        $categories = PCategory::all();
+        return view('pcategories.index')->with('name','CATALOG')->with('categories',$categories);
     }
+
+       /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $category = PCategory::find($id);
+        if($category->children->count() > 0 ){
+            $categories = $category->children;
+            return view('pcategories.index')->with('categories',$categories)->with('name',$category->name);
+        }
+        $products = $category->products;
+        return view('pcategories.products')->with('products',$products)->with('name',$category->name);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -32,7 +50,7 @@ class PCategoriesController extends Controller
     public function create()
     {
         auth()->user()->authorizeRoles(['administrator', 'manager']);
-        return view('pcategories.create');
+        return view('pcategories.create')->with('categories',PCategory::all());
     }
 
     /**
@@ -71,23 +89,16 @@ class PCategoriesController extends Controller
         $pCategory->sizes = $request->input('size');
         $pCategory->description = $request->input('description');
         $pCategory->cover_image = $fileNameToStore;
+        if($request->input('parent')!='None'){
+            $parent = PCategory::find($request->input('parent'));
+            $pCategory->parent_id = $parent->id;
+        }
+        else{
+        $pCategory->parent_id = '0';
+        }
         $pCategory->save();
         return redirect('/dashboard/categories')->with('success', 'Category Created');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $category = PCategory::find($id);
-        $products = $category->products;
-        return view('pcategories.products')->with('products',$products)->with('category_name',$category->name);
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
