@@ -22,16 +22,19 @@
             {{Form::textarea('description', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
         </div>
         <div class="form-group">
-            {{Form::label('cover_image1', 'Carrousel Image 1')}}
+            {{Form::label('cover_image1', 'Product Image 1')}}
             {{Form::file('cover_image1')}}
+            <small> Recommended Size 768 X 512.</small>
             </div>
         <div class="form-group">
-                {{Form::label('cover_image2', 'Carrousel Image 2')}}
+                {{Form::label('cover_image2', 'Product Image 2')}}
                 {{Form::file('cover_image2')}}
+                <small> Recommended Size 768 X 512.</small>
             </div>
         <div class="form-group">
-                {{Form::label('cover_image3', 'Carrousel Image 3')}}
+                {{Form::label('cover_image3', 'Product Image 3')}}
                 {{Form::file('cover_image3')}}
+                <small> Recommended Size 768 X 512.</small>
             </div>
             <div class="form-group col-sm-4">
                     {{Form::label('category', 'Category')}}

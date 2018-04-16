@@ -20,6 +20,7 @@
         <div class="form-group">
             {{Form::label('cover_image', 'Cover Image')}}
             {{Form::file('cover_image')}}
+            <small> Recommended Size 600 X 400.</small>
             </div>
             <div class="form-group row m-3">
                     <label for="parent" class="col-form-label">{{ __('Parent') }}</label>

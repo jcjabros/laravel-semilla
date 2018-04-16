@@ -12,7 +12,8 @@
                            <img class="card-img-top img-fluid" style="width:100%; height:300px " src="/storage/cover_images/{{$homeSlider->image1}}" alt="Card image cap">
                            <div class="card-body"> 
                            {{Form::file('image1',['id'=>'form-file','class'=>'btn btn-success'])}}
-                           {{Form::submit('Update', ['class'=>'btn btn-primary'])}}
+                           <small> Recommended Size 1871 X 512.</small>
+                           {{Form::submit('Update', ['class'=>'btn btn-primary float-right'])}}
                            </div>
                    </div>
              </div>
@@ -24,7 +25,8 @@
                                    <img class="card-img-top img-fluid" style="width:100%; height:300px " src="/storage/cover_images/{{$homeSlider->image2}}" alt="Card image cap">
                                    <div class="card-body"> 
                                    {{Form::file('image2',['id'=>'form-file','class'=>'btn btn-success'])}}
-                                   {{Form::submit('Update', ['class'=>'btn btn-primary'])}}
+                                   <small> Recommended Size 1871 X 512.</small>
+                                   {{Form::submit('Update', ['class'=>'btn btn-primary float-right'])}}
                                    </div>
                            </div>
               </div>
@@ -36,7 +38,8 @@
                                    <img class="card-img-top img-fluid" style="width:100%; height:300px " src="/storage/cover_images/{{$homeSlider->image3}}" alt="Card image cap">
                                    <div class="card-body"> 
                                    {{Form::file('image3',['id'=>'form-file','class'=>'btn btn-success'])}}
-                                   {{Form::submit('Update', ['class'=>'btn btn-primary'])}}
+                                   <small> Recommended Size 1871 X 512.</small>
+                                   {{Form::submit('Update', ['class'=>'btn btn-primary float-right'])}}
                                    </div>
                            </div>
               </div>

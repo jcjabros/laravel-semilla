@@ -14,7 +14,9 @@
                 {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
             </div>
             <div class="form-group">
+                <label>Post Image :</label>
                 {{Form::file('cover_image')}}
+                <small> Recommended Size 768 X 512.</small>
             </div>
             {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
         {!! Form::close() !!}
