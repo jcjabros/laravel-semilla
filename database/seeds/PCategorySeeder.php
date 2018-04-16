@@ -18,7 +18,7 @@ class PCategorySeeder extends Seeder
             $category->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. Donec molestie scelerisque nisi, 
             ac ultricies erat finibus sed. In finibus, risus a egestas interdum, 
             lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-            $category->cover_image = 'cover-ex.png';
+            $category->cover_image = 'noimage.jpg';
             $category->save();
         
             $category = new PCategory();
@@ -27,7 +27,7 @@ class PCategorySeeder extends Seeder
             $category->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. Donec molestie scelerisque nisi, 
                                       ac ultricies erat finibus sed. In finibus, risus a egestas interdum, 
                                       lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-            $category->cover_image = 'cover-ex.png';
+            $category->cover_image = 'noimage.jpg';
             $category->save();
         
             $category = new PCategory();
@@ -36,7 +36,7 @@ class PCategorySeeder extends Seeder
             $category->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. Donec molestie scelerisque nisi, 
             ac ultricies erat finibus sed. In finibus, risus a egestas interdum, 
             lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-            $category->cover_image = 'cover-ex.png';
+            $category->cover_image = 'noimage.jpg';
             $category->save();
             }
     }

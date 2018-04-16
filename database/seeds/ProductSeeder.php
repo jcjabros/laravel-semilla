@@ -24,10 +24,10 @@ class ProductSeeder extends Seeder
     $product->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. 
                                 Donec molestie scelerisque nisi, ac ultricies erat finibus sed. 
                                 In finibus, risus a egestas interdum, lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-    $product->cover_img1 = 'cover-ex.png';
-    $product->cover_img2 = 'cover-ex.png';
-    $product->cover_img3 = 'cover-ex.png';
-    $product->catalog_pdf ='cover-ex.png';
+    $product->cover_img1 = 'noimage.jpg';
+    $product->cover_img2 = 'noimage.jpg';
+    $product->cover_img3 = 'noimage.jpg';
+    $product->catalog_pdf ='noimage.jpg';
     $product->price = '1000';
     $product->p_category_id = $categoryBase->id;
     $product->save();
@@ -39,10 +39,10 @@ class ProductSeeder extends Seeder
     $product->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. 
                                 Donec molestie scelerisque nisi, ac ultricies erat finibus sed. 
                                 In finibus, risus a egestas interdum, lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-    $product->cover_img1 = 'cover-ex.png';
-    $product->cover_img2 = 'cover-ex.png';
-    $product->cover_img3 = 'cover-ex.png';
-    $product->catalog_pdf ='cover-ex.png';
+    $product->cover_img1 = 'noimage.jpg';
+    $product->cover_img2 = 'noimage.jpg';
+    $product->cover_img3 = 'noimage.jpg';
+    $product->catalog_pdf ='noimage.jpg';
     $product->price = '1000';
     $product->p_category_id = $categoryBase->id;
     $product->save();
@@ -54,10 +54,10 @@ class ProductSeeder extends Seeder
     $product->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. 
                                 Donec molestie scelerisque nisi, ac ultricies erat finibus sed. 
                                 In finibus, risus a egestas interdum, lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-    $product->cover_img1 = 'cover-ex.png';
-    $product->cover_img2 = 'cover-ex.png';
-    $product->cover_img3 = 'cover-ex.png';
-    $product->catalog_pdf ='cover-ex.png';
+    $product->cover_img1 = 'noimage.jpg';
+    $product->cover_img2 = 'noimage.jpg';
+    $product->cover_img3 = 'noimage.jpg';
+    $product->catalog_pdf ='noimage.jpg';
     $product->price = '1000';
     $product->p_category_id = $categoryBase->id;
     $product->save();
@@ -69,10 +69,10 @@ class ProductSeeder extends Seeder
     $product->description = 'Fusce et augue non dui pulvinar dapibus eget non libero. 
                                 Donec molestie scelerisque nisi, ac ultricies erat finibus sed. 
                                 In finibus, risus a egestas interdum, lorem ipsum semper eros, in scelerisque mi lectus non ex.';
-    $product->cover_img1 = 'cover-ex.png';
-    $product->cover_img2 = 'cover-ex.png';
-    $product->cover_img3 = 'cover-ex.png';
-    $product->catalog_pdf ='cover-ex.png';
+    $product->cover_img1 = 'noimage.jpg';
+    $product->cover_img2 = 'noimage.jpg';
+    $product->cover_img3 = 'noimage.jpg';
+    $product->catalog_pdf ='noimage.jpg';
     $product->price = '1000';
     $product->p_category_id = $categoryRoof->id;
     $product->save();
