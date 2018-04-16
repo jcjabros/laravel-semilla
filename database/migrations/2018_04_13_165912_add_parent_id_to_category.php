@@ -14,7 +14,7 @@ class AddParentIdToCategory extends Migration
     public function up()
     {
         Schema::table('p_categories', function($table){
-            $table->integer('parent_id');
+            $table->integer('parent_id')->default('0');//No parent
         });
     }
 
