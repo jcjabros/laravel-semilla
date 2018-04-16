@@ -2,7 +2,7 @@
 
 ## Installation.
 
-1. Run git clone https://github.com/jcjabros/Laravel-Semilla.git
+1. Run `git clone https://github.com/jcjabros/Laravel-Semilla.git`
 
 2. Run `composer install`
 
