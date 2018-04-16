@@ -87,9 +87,13 @@ class RegisterController extends Controller
             ->roles()
             ->attach(Role::where('name','user')->first());
             if (array_get($data, 'subscribe', false)){
-                $subscriber        = new Subscriber;
-                $subscriber->email = $data['email'];
-                $subscriber->save();
+                //Check if the email is already subscribed.
+                $subscriber = Subscriber::where('email', '=',$data['email'])->first();
+                if ($subscriber === null) {  //If not create a new subscriber.
+                    $subscriber        = new Subscriber;
+                    $subscriber->email = $data['email'];
+                    $subscriber->save();
+                }
             }
           }
          return $user;

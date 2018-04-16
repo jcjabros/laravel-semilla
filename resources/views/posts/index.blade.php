@@ -13,7 +13,7 @@
                         <img class="card-img-top img-fluid" style="width:100%; height:400px " src="/storage/cover_images/{{$post->cover_image}}" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title"><a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a></h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text">{!!substr($post->body,0,160)!!} <a href="/posts/{{$post->id}}">read more ...</a></p>
                         </div>
                         <div class="card-footer">
                           <small class="text-muted"><samall>Written by {{$post->user->name}} on {{$post->created_at}} </samall></small>

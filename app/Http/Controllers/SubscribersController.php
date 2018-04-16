@@ -16,9 +16,8 @@ class SubscribersController extends Controller
         $subscriber->email = $request->input('subscribe_email');
         $subscriber->save();
 
-        return redirect('/')->with('success', 'Thank You For Subscribing!');;
+        return redirect('/')->with('success', 'Thank You For Subscribing!');
     }
-
     public function delete($id){
         $subscriber = Subscriber::find($id);
         $subscriber->delete();

@@ -20,7 +20,7 @@ class PCategoriesController extends Controller
 
     public function index()
     {
-        $categories = PCategory::all();
+        $categories = PCategory::where('parent_id','0')->get(); //Get all categories without parent.
         return view('pcategories.index')->with('name','CATALOG')->with('categories',$categories);
     }
 
@@ -33,10 +33,10 @@ class PCategoriesController extends Controller
     public function show($id)
     {
         $category = PCategory::find($id);
-        if($category->children->count() > 0 ){
+        if($category->children->count() > 0 ){//If a category has subcategories show a list of his subcategories.
             $categories = $category->children;
             return view('pcategories.index')->with('categories',$categories)->with('name',$category->name);
-        }
+        } //else if  a category has not subcategories show a list of his products.
         $products = $category->products;
         return view('pcategories.products')->with('products',$products)->with('name',$category->name);
     }

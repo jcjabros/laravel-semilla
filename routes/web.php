@@ -28,11 +28,11 @@ Route::get('/dashboard/subscribers', 'DashboardController@subscribers')->name('S
 Route::resource('posts','PostsController');
 Route::resource('catalog', 'PCategoriesController');
 Route::resource('product', 'ProductController');
-Route::get('/changePassword','DashboardController@showChangePasswordForm');
-Route::post('/changePassword','DashboardController@changePassword')->name('changePassword');
+Route::get('/changePassword','Auth\ChangePasswordController@showChangePasswordForm');
+Route::post('/changePassword','Auth\ChangePasswordController@changePassword')->name('changePassword');
 Route::post('/subscribe','SubscribersController@postSubscribeAjax');
 Route::delete('/subscribe/{subscriber_id}','SubscribersController@delete');
-Route::delete('/register/{register_id}','DestroyController@delete');
+Route::delete('/auth_delete/{auth_id}','Auth\DestroyController@delete');
 Route::post('/homeSlider/create', 'HomeSliderController@store');
 Route::post('/homeSlider/{slider_id}', 'HomeSliderController@update');
 Auth::routes();
