@@ -35,6 +35,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
+                                <th>Email</th>
                                 <th>Role</th>
                                 <th></th>
                             </tr>
@@ -42,6 +43,7 @@
                                 <tr>
                                     <td>{{$countUsers++}}</td>
                                     <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
                                     <td>{{$user->roles()->first()->description}}</td>
                                     <td>
                                             {!!Form::open(['action' => ['Auth\DestroyController@delete', $user->id],'method' => 'POST', 'class' => 'pull-right form-delete','onsubmit' => 'return ConfirmDelete()'])!!}
