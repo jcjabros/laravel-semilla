@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./comparisonslider');
 
 window.Vue = require('vue');
 

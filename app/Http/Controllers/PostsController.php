@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Subscriber;
 use DB;
 use Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PostNotification;
 class PostsController extends Controller
 {
     /**
@@ -91,7 +94,8 @@ class PostsController extends Controller
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
         $post->save();
-        return redirect('/posts')->with('success', 'Post Created');
+        Mail::to(Subscriber::all())->send(new PostNotification($post));
+        return redirect('/posts')->with('success', 'Post Created Successfully.A notification was sent to all subscribers.');
     }
 
     /**

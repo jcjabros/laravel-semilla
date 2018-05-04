@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use\App\Subscriber;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SubscriberWelcome;
 use Validator;
 class SubscribersController extends Controller
 {
@@ -15,7 +17,7 @@ class SubscribersController extends Controller
         $subscriber        = new Subscriber;
         $subscriber->email = $request->input('subscribe_email');
         $subscriber->save();
-
+        Mail::to($subscriber->email)->send(new SubscriberWelcome());
         return redirect('/')->with('success', 'Thank You For Subscribing!');
     }
     public function delete($id){

@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('posts') ? 'active' : '' }}" href="/posts">News</a>
                           </li>
+                          <li class="nav-item">
+                                <a class="nav-link {{ Request::is('beforenafter') ? 'active' : '' }}" href="/beforenafter">Before & After</a>
+                              </li>
                         <li class="nav-item">
                           <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a>
                         </li>

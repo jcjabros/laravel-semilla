@@ -123,6 +123,9 @@
           <hr class="featurette-divider">
   
           <!-- /END THE FEATURETTES -->
-  
+          
+  <!-- Contact Section -->
+  @include('inc.contact')
+  <br>
         </div><!-- /.container -->  
   @endsection

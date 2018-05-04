@@ -13858,7 +13858,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(44);
 
 
 /***/ }),
@@ -13873,8 +13873,9 @@ module.exports = __webpack_require__(43);
  */
 
 __webpack_require__(13);
+__webpack_require__(36);
 
-window.Vue = __webpack_require__(36);
+window.Vue = __webpack_require__(37);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -13882,7 +13883,7 @@ window.Vue = __webpack_require__(36);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(39));
+Vue.component('example-component', __webpack_require__(40));
 
 var app = new Vue({
   el: '#app'
@@ -35872,6 +35873,89 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports) {
+
+
+$(document).ready(function () {
+  $('.ba-slider').each(function () {
+    var cur = $(this);
+    // Adjust the slider
+    var width = cur.width() + 'px';
+    cur.find('.resize img').css('width', width);
+    // Bind dragging events
+    drags(cur.find('.handle'), cur.find('.resize'), cur);
+  });
+});
+
+// Update sliders on resize.
+// We all do it: i.imgur.com/YkbaV.gif
+$(window).resize(function () {
+  $('.ba-slider').each(function () {
+    var cur = $(this);
+    var width = cur.width() + 'px';
+    cur.find('.resize img').css('width', width);
+  });
+
+  function drags(dragElement, resizeElement, container) {
+
+    // Initialize the dragging event on mousedown.
+    dragElement.on('mousedown touchstart', function (e) {
+
+      dragElement.addClass('draggable');
+      resizeElement.addClass('resizable');
+
+      // Check if it's a mouse or touch event and pass along the correct value
+      var startX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
+
+      // Get the initial position
+      var dragWidth = dragElement.outerWidth(),
+          posX = dragElement.offset().left + dragWidth - startX,
+          containerOffset = container.offset().left,
+          containerWidth = container.outerWidth();
+
+      // Set limits
+      minLeft = containerOffset + 10;
+      maxLeft = containerOffset + containerWidth - dragWidth - 10;
+
+      // Calculate the dragging distance on mousemove.
+      dragElement.parents().on("mousemove touchmove", function (e) {
+
+        // Check if it's a mouse or touch event and pass along the correct value
+        var moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
+
+        leftValue = moveX + posX - dragWidth;
+
+        // Prevent going off limits
+        if (leftValue < minLeft) {
+          leftValue = minLeft;
+        } else if (leftValue > maxLeft) {
+          leftValue = maxLeft;
+        }
+
+        // Translate the handle's left value to masked divs width.
+        widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
+        // Set the new values for the slider and the handle. 
+        // Bind mouseup events to stop dragging.
+        $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
+          $(this).removeClass('draggable');
+          resizeElement.removeClass('resizable');
+        });
+        $('.resizable').css('width', widthValue);
+      }).on('mouseup touchend touchcancel', function () {
+        dragElement.removeClass('draggable');
+        resizeElement.removeClass('resizable');
+      });
+      e.preventDefault();
+    }).on('mouseup touchend touchcancel', function (e) {
+      dragElement.removeClass('draggable');
+      resizeElement.removeClass('resizable');
+    });
+  }
+});
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46834,10 +46918,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(37).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(38).setImmediate))
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
@@ -46890,7 +46974,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(38);
+__webpack_require__(39);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -46904,7 +46988,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -47097,15 +47181,15 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(40)
+var normalizeComponent = __webpack_require__(41)
 /* script */
-var __vue_script__ = __webpack_require__(41)
+var __vue_script__ = __webpack_require__(42)
 /* template */
-var __vue_template__ = __webpack_require__(42)
+var __vue_template__ = __webpack_require__(43)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47144,7 +47228,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -47253,7 +47337,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47282,7 +47366,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47325,7 +47409,7 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

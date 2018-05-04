@@ -11,6 +11,7 @@ use App\Product;
 use App\Post;
 use App\Subscriber;
 use App\HomeSlider;
+use App\BeforenAfter;
 class DashboardController extends Controller
 {
     /**
@@ -79,5 +80,9 @@ class DashboardController extends Controller
     public function slider(){
         $homeSlider = HomeSlider::get()->first();
         return view('dashboard.sliders')->with('homeSlider',$homeSlider);
+    }
+    public function before_n_after(){
+        $BnASliders = BeforenAfter::all();
+        return view('dashboard.before_n_after')->with('BnASliders',$BnASliders);
     }
 }

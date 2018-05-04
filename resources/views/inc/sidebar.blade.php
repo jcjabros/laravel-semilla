@@ -15,11 +15,17 @@
               </li>
             @if(Auth::user()->hasRole('administrator') !=null || Auth::user()->hasRole('manager') !=null || Auth::user()->hasRole('employee'))
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}"  href="/dashboard/posts">
-                  <span data-feather="bar-chart-2"></span>
-                  Posts
+                <a class="nav-link {{ Request::is('dashboard/beforenafter') ? 'active' : '' }}"  href="/dashboard/beforenafter">
+                  <span data-feather="scissors"></span>
+                  Before and After
                 </a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}"  href="/dashboard/posts">
+                    <span data-feather="bar-chart-2"></span>
+                    Posts
+                  </a>
+                </li>
             @if(Auth::user()->hasRole('administrator') !=null || Auth::user()->hasRole('manager') !=null)
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/#') ? 'active' : '' }}"  href="/dashboard/subscribers">
