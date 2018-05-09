@@ -14,7 +14,8 @@ class BeforenAfterController extends Controller
 
 
     public function store(Request $request){
-        $this->validate($request, [
+        $this->validate($request, [ 
+            'description' => 'required',
             'before-img' => 'required|image|nullable|max:1999',
             'after-img' => 'required|image|nullable|max:1999'
         ]);
@@ -49,7 +50,7 @@ class BeforenAfterController extends Controller
         }
         // Create B/A Siler
         $slider = new BeforenAfter;
-        $slider->title = $request->input('title');
+        $slider->title = $request->input('description');
         $slider->before_img = $fileNameToStore1;
         $slider->after_img = $fileNameToStore2;
         $slider->save();

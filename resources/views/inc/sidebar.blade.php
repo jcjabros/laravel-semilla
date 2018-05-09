@@ -21,6 +21,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/gallery') ? 'active' : '' }}"  href="/dashboard/gallery">
+                  <span data-feather="image"></span>
+                  Gallery
+                </a>
+              </li>
+              <li class="nav-item">
                   <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}"  href="/dashboard/posts">
                     <span data-feather="bar-chart-2"></span>
                     Posts
@@ -40,6 +46,18 @@
               </a>
             </li>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('dashboard/treatmenttypes') ? 'active' : '' }}"  href="/dashboard/treatmenttypes">
+                <span data-feather="type"></span>
+                Treatments Type
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/treatments') ? 'active' : '' }}"  href="/dashboard/treatments">
+                  <span data-feather="scissors"></span>
+                  Treatments
+                </a>
+              </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/categories') ? 'active' : '' }}"  href="/dashboard/categories">
                   <span data-feather="layers"></span>

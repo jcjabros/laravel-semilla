@@ -15,7 +15,7 @@ class CreatePCategoriesTable extends Migration
     {
         Schema::create('p_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('sizes');
             $table->mediumText('description');
             $table->string('cover_image');

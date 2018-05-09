@@ -8,26 +8,24 @@
                 <h1 class="h2">Before and After</h1>
               </div>
     <div class="row justify-content-center">
-        <div class="col-lg-7">
+        <div class="col-lg-6">
             {!! Form::open(['action' => 'BeforenAfterController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}   
             <h3>Create a Before and After</h3>
-            <div class="form-group col-md-6">
-                    {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
+            <div class="form-group col-md-8">
+                    {{Form::text('description', '', ['class' => 'form-control', 'placeholder' => 'Short Description'])}}
+                    <div class="custom-file mt-2">
+                            <input id="before-img" name="before-img" type="file" class="custom-file-input">
+                            <label class="custom-file-label" for="customFile">Before Image</label>
+                          </div>
+                        <div class="custom-file mt-2">
+                                <input id="after-img" name="after-img" type="file" class="custom-file-input">
+                                <label class="custom-file-label" for="after-img">After Image</label>
+                              </div>
                 </div> 
-                <div class="row">
-            <div class="form-group col-md-4">
-                    {{Form::label('before-img', 'Before Image :')}}
-                    {{Form::file('before-img')}}
-                    </div>
-                <div class="form-group col-md-4">
-                        {{Form::label('after-img', 'After Image :')}}
-                        {{Form::file('after-img')}}
-                    </div>
-                </div>
                     {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
                   {!! Form::close() !!}
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
                 @if(count($BnASliders) > 0)
                         <table class="table table-striped">
                             <tr>

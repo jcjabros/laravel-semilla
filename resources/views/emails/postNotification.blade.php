@@ -1,7 +1,7 @@
 @component('mail::message')
-# Check out our new Post {{$post->title}}
+# Check out our new Post "{{$post->title}}"
 
-{!!substr($post->body,0,160)!!}
+{!!substr($post->body,0,100)!!} ...
 
 @component('mail::button', ['url' => 'laravelsemilla.test/posts/{{$post->id}}'])
 Read More

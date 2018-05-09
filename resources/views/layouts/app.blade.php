@@ -124,5 +124,33 @@ function drags(dragElement, resizeElement, container) {
     });
   }
     </script>
+<script type="text/javascript">
+  $(document).ready(function(){      
+    var i=1;  
+    $('#add').click(function(){  
+         i++;  
+         $('#dynamic_field').append('<div id="row-dynamic'+i+'" class="row p-1"> <div class="col-md-3"> <input type="text" name="durations[]" placeholder="Duration" class="form-control" /> </div> <div class="col-md-3"> <input type="text" name="prices[]" placeholder="Price" class="form-control" /></div> <div class="col-md-1"> <button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></div></div>');  
+    });  
+
+    $(document).on('click', '.btn_remove', function(){  
+         var button_id = $(this).attr("id");   
+         $('#row-dynamic'+button_id+'').remove();  
+    });  
+  });  
+</script>
+<script>
+  $("input[type=file]").change(function () {
+  var fieldVal = $(this).val();
+
+  // Change the node's value by removing the fake path (Chrome)
+  fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+    
+  if (fieldVal != undefined || fieldVal != "") {
+    $(this).next(".custom-file-label").attr('data-content', fieldVal);
+    $(this).next(".custom-file-label").text(fieldVal);
+  }
+
+});
+</script>
 </body>
 </html>

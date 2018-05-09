@@ -12,6 +12,9 @@ use App\Post;
 use App\Subscriber;
 use App\HomeSlider;
 use App\BeforenAfter;
+use App\Gallery;
+use App\treatmentType;
+use App\treatment;
 class DashboardController extends Controller
 {
     /**
@@ -84,5 +87,18 @@ class DashboardController extends Controller
     public function before_n_after(){
         $BnASliders = BeforenAfter::all();
         return view('dashboard.before_n_after')->with('BnASliders',$BnASliders);
+    }
+
+    public function gallery(){
+        $gallery = Gallery::all();
+        return view('dashboard.gallery')->with('gallery',$gallery);
+    }
+    public function treatmenttypes(){
+        $treatmenttypes = TreatmentType::all();
+        return view('dashboard.treatmenttype')->with('treatmenttypes',$treatmenttypes);
+    }
+    public function treatments(){
+        $treatments = Treatment::orderby('created_at','desc')->paginate(10);;
+        return view('dashboard.treatment')->with('treatments',$treatments);
     }
 }
