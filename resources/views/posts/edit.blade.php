@@ -14,9 +14,10 @@
                     {{Form::textarea('body', $post->body, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
                 </div>
                 <div class="form-group">
-                    <label>Post Image :</label>
-                    {{Form::file('cover_image')}}
-                    <small> Recommended Size 768 X 512.</small>
+                        <div class="custom-file">
+                                <input id="cover_image" name="cover_image" type="file" class="custom-file-input">
+                                <label class="custom-file-label" for="customFile">Post Image Recommended Size 768 X 512.</label>
+                              </div>
                 </div>
                 {{Form::hidden('_method','PUT')}}
                 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}

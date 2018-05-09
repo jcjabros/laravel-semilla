@@ -18,10 +18,10 @@
                           <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link {{ Request::is('catalog') ? 'active' : '' }}" href="/catalog">Catalog</a>
+                                <a class="nav-link {{ Request::is('gallery') ? 'active' : '' }}" href="/gallery">Gallery</a>
                               </li>
                         <li class="nav-item">
-                          <a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a>
+                          <a class="nav-link {{ Request::is('treatments') ? 'active' : '' }}" href="/treatments">Treatments</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('posts') ? 'active' : '' }}" href="/posts">News</a>

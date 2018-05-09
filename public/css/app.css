@@ -10079,6 +10079,10 @@ body {
   margin-bottom: 200px;
 }
 
+.custom-file-label {
+  overflow: hidden !important;
+}
+
 /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
