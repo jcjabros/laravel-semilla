@@ -147,7 +147,6 @@ html {
   bottom:0;
   width:4px;
   margin-left:-2px;
-
   background: rgba(0,0,0,.5);
   cursor: ew-resize;
 }
@@ -158,22 +157,18 @@ html {
     width: 64px;
     height: 64px;
     margin: -32px 0 0 -32px;
-
-    content:'\21d4';
+    content:'\21C4';
     color:white;
     font-weight:bold;
     font-size:36px;
     text-align:center;
     line-height:64px;
     transition:all 0.3s ease;
+
 }
 
 .handle.draggable:after {
-    width: 48px;
-    height: 48px;
-    margin: -24px 0 0 -24px;
-    line-height:50px;
-    font-size:30px;
+  color:rgb(91, 91, 91);
 }
 
     /* RESPONSIVE CSS

@@ -10230,7 +10230,7 @@ body {
   width: 64px;
   height: 64px;
   margin: -32px 0 0 -32px;
-  content: '\21D4';
+  content: '\21C4';
   color: white;
   font-weight: bold;
   font-size: 36px;
@@ -10241,11 +10241,7 @@ body {
 }
 
 .handle.draggable:after {
-  width: 48px;
-  height: 48px;
-  margin: -24px 0 0 -24px;
-  line-height: 50px;
-  font-size: 30px;
+  color: #5b5b5b;
 }
 
 /* RESPONSIVE CSS
